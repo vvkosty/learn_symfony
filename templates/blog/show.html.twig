@@ -1,0 +1,8 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<h1>{{ news.title }}</h1>
+	<p>{{ news.description }}</p>
+	<p>{{ news.author }}</p>
+	<p>{{ news.getCreatedAt()|date('Y-m-d H:i') }}</p>
+{% endblock %}

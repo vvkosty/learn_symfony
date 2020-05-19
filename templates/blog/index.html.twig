@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	
+	{% for news in newsList %}
+		<h1>{{ news.title }}</h1>
+		<p>{{ news.description }}</p>
+		<a href="{{ path('show', {id: news.id}) }}">Читать</a>
+	{% endfor %}
+
+	{% if previous >= 0 %}
+		<a href="{{ path('index', { offset:previous }) }}">Previous</a>
+	{% endif %}
+
+	{% if next < newsCount %}
+		<a href="{{ path('index', { offset: next}) }}">Next</a>
+	{% endif %}
+
+	<br>
+	{{ form(form) }}
+{% endblock %}

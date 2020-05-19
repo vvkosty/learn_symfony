@@ -1,3 +1,13 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+    path: /
+    controller: App\Controller\BlogController::index
+
+show:
+    path: /blog/{id}
+    controller: App\Controller\BlogController::show
+    requirements:
+        id: '\d+'
+    
+save:
+    path: /blog/save
+    controller: App\Controller\BlogController::save
